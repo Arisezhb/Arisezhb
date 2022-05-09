@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // let arr = [
+      //   { name: 'jack', id: 1 },
+      //   { name: 'rose', id: 2 },
+      //   { name: 'tom', id: 3 }
+      // ]
+      // arr.myfilter(function(v) {
+      //   return v.id == 2
+      // })
+      let data = [
+        { id: 1, name: 'jack', pro: '广东' },
+        { id: 2, name: 'rose', pro: '广西' },
+        { id: 3, name: 'tom', pro: '北京' },
+
+        { id: 4, name: 'lili', pro: '广东' }
+      ]
+
+      let arr = [{ name: '广西', value: 1 }, { name: '广东', value: 1 }]
+
+      data.forEach(function(v) {
+        // 遍历源数据
+
+        // let temp = arr.filter(function(item) {
+        //   return item.name == v.pro
+        // })[0] // 查找
+        // console.log(temp == arr[0])
+
+        // 目的是查找，不是操作
+        let res = {}
+        for (let i = 0; i < arr.length; i++) {
+          if (arr[i].name == v.pro) {
+            res = arr[i]
+          }
+        }
+
+        if (res) {
+          temp.value += 1
+        } else {
+          arr.push({ name: v.name, value: 1 })
+        }
+      })
+      console.log(arr)
+
+      Array.prototype.myfilter = function(callback) {
+        let temp = []
+        // 谁调用函数，谁就是函数中的this
+        for (let i = 0; i < this.length; i++) {
+          console.log(this[i])
+
+          if (callback(this[i])) {
+            temp.push(this[i])
+          }
+        }
+
+        return temp
+      }
+      // 将arr中的偶数提取出来生成一个新数组
+      // filter使用场景： 删除   查找(查询)
+      // filter,它是数组的方法，方法要传入一个回调函数，在遍历数组的时候，它会执行回调函数(每次传入遍历到的数据)，如果回调函数的返回结果为true,则会将当前对应的遍历到的数据存储到内部数组，最终将数组返回
+      // let temp = arr.filter(function(value, index) {
+      //   return value % 2 == 0
+      // })
+      // console.log(temp)
+
+      // let temp = arr.myfilter(function(v) {
+      //   return v > 100
+      // })
+      // console.log(temp)
+    </script>
+  </body>
+</html>

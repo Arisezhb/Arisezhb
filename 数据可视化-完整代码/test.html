@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- 实现a超链接的页面在指定的 iframe浮动框架 中展示 -->
+
+    <!-- 2.将a超链接的target属性的值设置为浮动框架的name属性值 -->
+    <a href="https://ai.taobao.com/" target="abc">淘宝</a>
+    <a href="https://www.jd.com/" target="abc">京东</a>
+    <a href="https://www.163.com/" target="abc">网易</a> <br />
+
+    <!-- 1.为浮动框架设置name属性 -->
+    <iframe
+      name="abc"
+      src="https://ai.taobao.com/"
+      frameborder="0"
+      style="width:100%;height: 700px"
+    ></iframe>
+  </body>
+</html>
